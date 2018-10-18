@@ -1,0 +1,21 @@
+{
+    "require": {
+        "serps/search-engine-google": "^0.3.0",
+        "zendframework/zend-diactoros": "^1.7",
+        "guzzlehttp/psr7": "^1.4",
+        "serps/http-client-curl": "^0.2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "web/src/",
+            "Tests\\": "web/tests/"
+        },
+        "classmap": [
+            "web/src/"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7",
+        "symfony/var-dumper": "^4.1"
+    }
+}
