@@ -1,10 +1,14 @@
 <?php
 
-use Src\CheckBracketsSpecification;
+require_once '../vendor/autoload.php';
 
-require '../vendor/autoload.php';
+$pizza = new \Src\Decorator\BasicPizza();
+echo $pizza->getCost() . PHP_EOL;
 
-$testExpression = '[5] * 3 - ( 4 - 7 * [3-6])';
-$specification = new CheckBracketsSpecification($testExpression);
-$result = $specification->isSatisfiedBy();
-var_dump($result);
+$cheezePizza = new \Src\Decorator\CheezeDecorator($pizza);
+echo $cheezePizza->getCost() . PHP_EOL;
+echo $cheezePizza->getDescription() . PHP_EOL;
+
+$pomidoro = new \Src\Decorator\TomatoDecorator($cheezePizza);
+echo $pomidoro->getDescription();
+echo $pomidoro->getCost();
